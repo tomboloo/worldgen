@@ -17,12 +17,7 @@ public class CustomChunkGeneratorr extends ChunkGenerator {
 		SimplexOctaveGenerator generator = new SimplexOctaveGenerator(new Random(worldInfo.getSeed()), 8);
 		generator.setScale(0.024);
 
-		Material material;
-		if (worldInfo.getEnvironment() == World.Environment.NORMAL) {
-			material = Material.STONE;
-		} else {
-			material = Material.NETHERRACK;
-		}
+		Material material = Material.TERRACOTTA;
 
 		int worldX = chunkX * 16;
 		int worldZ = chunkZ * 16;

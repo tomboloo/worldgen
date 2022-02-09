@@ -1,0 +1,7 @@
+load: STARTUP
+name: worldgen
+main: com.gmail.tommyfarron.worldgen.worldgen
+version: 0.0.6
+worlds:
+  world:
+    generator: worldgen

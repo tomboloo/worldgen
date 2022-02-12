@@ -15,7 +15,6 @@ import static org.bukkit.block.Biome.DESERT;
 
 public class WastelandChunkGenerator extends ChunkGenerator {
 
-	// Commenting this out for the time being
 //	@Override
 //	public void generateNoise(@NotNull WorldInfo worldInfo, @NotNull Random random, int chunkX, int chunkZ, @NotNull ChunkGenerator.ChunkData chunkData) {
 //
@@ -37,6 +36,17 @@ public class WastelandChunkGenerator extends ChunkGenerator {
 //				}
 //				for (int y = 0; y < height; y++) {
 //					chunkData.setBlock(X, y, Z, material);
+//				}
+//			}
+//		}
+//	}
+
+//	@Override
+//	public void generateBedrock(@NotNull WorldInfo worldInfo, @NotNull Random random, int chunkX, int chunkZ, @NotNull ChunkGenerator.ChunkData chunkData) {
+//		if (chunkData.getMinHeight() == worldInfo.getMinHeight()) {
+//			for (int x = 0; x < 16; x++) {
+//				for (int z = 0; z < 16; z++) {
+//					chunkData.setBlock(x, chunkData.getMinHeight(), z, Material.BEDROCK);
 //				}
 //			}
 //		}

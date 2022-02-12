@@ -22,7 +22,7 @@ public final class worldgen extends JavaPlugin {
 	public BiomeProvider getDefaultBiomeProvider(String worldName, String id) { return new WastelandBiomeProvider(); }
 
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) {
-		return new CustomChunkGeneratorr();
+		return new WastelandChunkGenerator();
 	}
 
 }

@@ -1,9 +1,8 @@
 package com.gmail.tommyfarron.worldgen;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
+import org.bukkit.block.Biome;
+import org.bukkit.generator.BiomeProvider;
 import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.metadata.Metadatable;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class worldgen extends JavaPlugin {
@@ -18,6 +17,9 @@ public final class worldgen extends JavaPlugin {
 		getLogger().info("worldgen-0.0.6 has shut down successfully");
 		
 	}
+
+	@Override
+	public BiomeProvider getDefaultBiomeProvider(String worldName, String id) { return new WastelandBiomeProvider(); }
 
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) {
 		return new CustomChunkGeneratorr();

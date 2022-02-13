@@ -12,6 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class worldgen extends JavaPlugin {
 	@Override
 	public void onEnable() {
+		// Register Listener
 		getServer().getPluginManager().registerEvents(new WastelandEventListener(), this);
 		getLogger().info("worldgen-0.0.6 has loaded successfully");
 	}
@@ -21,10 +22,11 @@ public final class worldgen extends JavaPlugin {
 		getLogger().info("worldgen-0.0.6 has shut down successfully");
 	}
 
+	// set default biome provider to our own class
 	@Override
 	public BiomeProvider getDefaultBiomeProvider(String worldName, String id) { return new WastelandBiomeProvider(); }
 
-	// https://www.spigotmc.org/threads/create-one-biome-worlds.538629/#:~:text=fr3qu3ncy-,Create%20a%20new%20class%20that%20extends%20BiomeProvider,-%2C%20then%20override%20getBiome
+	// set default world generator to our own class
 	@Override
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) { return new WastelandChunkGenerator(); }
 

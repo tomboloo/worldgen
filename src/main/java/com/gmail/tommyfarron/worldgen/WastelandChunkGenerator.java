@@ -18,23 +18,19 @@ public class WastelandChunkGenerator extends ChunkGenerator {
 	@Override
 	public void generateSurface(@NotNull WorldInfo worldInfo, @NotNull Random random, int x, int z, @NotNull ChunkData chunkData) {
 
-		for (int X = 0; X < 16; X++) {
-			for (int Z = 0; Z < 16; Z++) {
-				for (int y = 20; y < 75; y++) {
+		for (int X = 0; X < 16; X++) { // For every block in the chunks x direction
+			for (int Z = 0; Z < 16; Z++) { // For every block in the chunks z direction
+				for (int y = 20; y < 75; y++) { // every block between bottom of ocean and top of desert
 					Material currentBlock = chunkData.getBlockData(X, y, Z).getMaterial();
+					// Replace water blocks with air blocks
 					if (currentBlock == Material.WATER) {
 						chunkData.setBlock(X, y, Z, Material.AIR);
 					}
-					else if (currentBlock == Material.GRAVEL) {
-						chunkData.setBlock(X, y, Z, Material.SAND);
-					}
-					else if (currentBlock == Material.GRANITE) {
-						chunkData.setBlock(X, y, Z, Material.SAND);
-					}
-					else if (currentBlock == Material.ANDESITE) {
-						chunkData.setBlock(X, y, Z, Material.SAND);
-					}
-					else if (currentBlock == Material.DIORITE) {
+					// Replace gravel / granite / andesite / diorite blocks with sand (ocean floor)
+					else if (currentBlock == Material.GRAVEL
+							|| currentBlock == Material.GRANITE
+							|| currentBlock == Material.ANDESITE
+							|| currentBlock == Material.DIORITE) {
 						chunkData.setBlock(X, y, Z, Material.SAND);
 					}
 				}
@@ -42,6 +38,7 @@ public class WastelandChunkGenerator extends ChunkGenerator {
 		}
 	}
 
+	// Overrides to keep vanilla chunk generation
 	@Override
 	public boolean shouldGenerateNoise() {
 		return true;

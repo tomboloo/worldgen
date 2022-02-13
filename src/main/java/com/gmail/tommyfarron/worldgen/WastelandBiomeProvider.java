@@ -13,7 +13,7 @@ public class WastelandBiomeProvider extends BiomeProvider {
     public Biome getBiome(@NotNull WorldInfo worldInfo, int x, int y, int z) {
         if (y > 80) return Biome.BADLANDS;
         else if (y > 70) return Biome.ERODED_BADLANDS;
-        else if (y > 50) return Biome.DESERT;
+        else if (y > 30) return Biome.DESERT;
         else if (y > 0) return Biome.LUSH_CAVES;
         else return Biome.DRIPSTONE_CAVES;
     }

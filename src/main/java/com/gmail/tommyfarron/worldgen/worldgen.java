@@ -25,7 +25,7 @@ public final class worldgen extends JavaPlugin {
 	public BiomeProvider getDefaultBiomeProvider(String worldName, String id) { return new WastelandBiomeProvider(); }
 
 	// https://www.spigotmc.org/threads/create-one-biome-worlds.538629/#:~:text=fr3qu3ncy-,Create%20a%20new%20class%20that%20extends%20BiomeProvider,-%2C%20then%20override%20getBiome
-//	@Override
-//	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) { return new WastelandChunkGenerator(); }
+	@Override
+	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) { return new WastelandChunkGenerator(); }
 
 }

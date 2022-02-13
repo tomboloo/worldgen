@@ -15,45 +15,45 @@ import static org.bukkit.block.Biome.DESERT;
 
 public class WastelandChunkGenerator extends ChunkGenerator {
 
-//	@Override
-//	public void generateNoise(@NotNull WorldInfo worldInfo, @NotNull Random random, int chunkX, int chunkZ, @NotNull ChunkGenerator.ChunkData chunkData) {
-//
-//		SimplexOctaveGenerator generator = new SimplexOctaveGenerator(new Random(worldInfo.getSeed()), 8);
-//		generator.setScale(0.024);
-//
-//		Material material = Material.TERRACOTTA;
-//
-//		int worldX = chunkX * 16;
-//		int worldZ = chunkZ * 16;
-//
-//		for (int X = 0; X < 16; X++) {
-//			for (int Z = 0; Z < 16; Z++) {
-//				double noise = generator.noise(worldX, worldZ, Z, 1, 1, true);
-//				int height = (int) (noise * 40);
-//				height += 84;
-//				if (height > chunkData.getMaxHeight()) {
-//					height = chunkData.getMaxHeight();
-//				}
-//				for (int y = 0; y < height; y++) {
-//					chunkData.setBlock(X, y, Z, material);
-//				}
-//			}
-//		}
-//	}
+	@Override
+	public void generateSurface(@NotNull WorldInfo worldInfo, @NotNull Random random, int x, int z, @NotNull ChunkData chunkData) {
 
-//	@Override
-//	public void generateBedrock(@NotNull WorldInfo worldInfo, @NotNull Random random, int chunkX, int chunkZ, @NotNull ChunkGenerator.ChunkData chunkData) {
-//		if (chunkData.getMinHeight() == worldInfo.getMinHeight()) {
-//			for (int x = 0; x < 16; x++) {
-//				for (int z = 0; z < 16; z++) {
-//					chunkData.setBlock(x, chunkData.getMinHeight(), z, Material.BEDROCK);
-//				}
-//			}
-//		}
-//	}
+		for (int X = 0; X < 16; X++) {
+			for (int Z = 0; Z < 16; Z++) {
+				for (int y = 20; y < 75; y++) {
+					Material currentBlock = chunkData.getBlockData(X, y, Z).getMaterial();
+					if (currentBlock == Material.WATER) {
+						chunkData.setBlock(X, y, Z, Material.AIR);
+					}
+					else if (currentBlock == Material.GRAVEL) {
+						chunkData.setBlock(X, y, Z, Material.SAND);
+					}
+					else if (currentBlock == Material.GRANITE) {
+						chunkData.setBlock(X, y, Z, Material.SAND);
+					}
+					else if (currentBlock == Material.ANDESITE) {
+						chunkData.setBlock(X, y, Z, Material.SAND);
+					}
+					else if (currentBlock == Material.DIORITE) {
+						chunkData.setBlock(X, y, Z, Material.SAND);
+					}
+				}
+			}
+		}
+	}
+
+	@Override
+	public boolean shouldGenerateNoise() {
+		return true;
+	}
 
 	@Override
 	public boolean shouldGenerateSurface() {
+		return true;
+	}
+
+	@Override
+	public boolean shouldGenerateBedrock() {
 		return true;
 	}
 

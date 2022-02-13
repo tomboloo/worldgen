@@ -1,17 +1,11 @@
 package com.gmail.tommyfarron.worldgen;
 
 import org.bukkit.Material;
-import org.bukkit.block.Biome;
-import org.bukkit.generator.BiomeProvider;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.generator.WorldInfo;
-import org.bukkit.util.noise.SimplexOctaveGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
-
-import static org.bukkit.block.Biome.DESERT;
-
 
 public class WastelandChunkGenerator extends ChunkGenerator {
 

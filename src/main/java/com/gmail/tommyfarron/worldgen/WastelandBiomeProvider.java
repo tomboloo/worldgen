@@ -14,7 +14,8 @@ public class WastelandBiomeProvider extends BiomeProvider {
         if (y > 80) return Biome.BADLANDS;
         else if (y > 70) return Biome.ERODED_BADLANDS;
         else if (y > 50) return Biome.DESERT;
-        else return Biome.LUSH_CAVES;
+        else if (y > 0) return Biome.LUSH_CAVES;
+        else return Biome.DRIPSTONE_CAVES;
     }
 
     @Override
@@ -24,6 +25,7 @@ public class WastelandBiomeProvider extends BiomeProvider {
         biomes.add(Biome.BADLANDS);
         biomes.add(Biome.DESERT);
         biomes.add(Biome.LUSH_CAVES);
+        biomes.add(Biome.DRIPSTONE_CAVES);
         return biomes;
     }
 }
